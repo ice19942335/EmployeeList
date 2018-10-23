@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{21A9ADB7-9041-4F37-A848-858B7466154F}</ProjectGuid>
+    <ProjectGuid>{220BB51A-4E7C-4E77-BE52-9B8998BE0D9F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>EmployeeList</RootNamespace>
-    <AssemblyName>EmployeeList</AssemblyName>
+    <RootNamespace>EmployeeRegistration</RootNamespace>
+    <AssemblyName>EmployeeRegistration</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -55,34 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="AddDepartment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="AddEmployee.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="EditDepartment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Compile Include="Models\Model.cs" />
+    <Compile Include="Objects\Employee.cs" />
+    <Compile Include="Presenters\Presenter.cs" />
+    <Compile Include="Views\IView.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AddDepartment.xaml.cs">
-      <DependentUpon>AddDepartment.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="AddEmployee.xaml.cs">
-      <DependentUpon>AddEmployee.xaml</DependentUpon>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="EditDepartment.xaml.cs">
-      <DependentUpon>EditDepartment.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -91,7 +74,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Objects\Department.cs" />
-    <Compile Include="Objects\Employee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -116,6 +98,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <DesignData Include="DB_DEPARTMENT.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </DesignData>
+  </ItemGroup>
+  <ItemGroup>
+    <DesignData Include="DB_EMPLOYEE.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </DesignData>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
